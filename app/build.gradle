@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "activity.kotlin.coder.com"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+// 友盟多渠道打包
+    productFlavors {
+//        使用注释掉的这种方式也可以实现多渠道打包，这样就不用下面的productFlavors.all函数了
+//        如果只使用占位信息定义，如wandoujia{}，则需要productFlavors.all函数同意标识
+//        wandoujia {
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+//        }
+        // 360手机助手
+        _360 { }
+        // 91手机助手
+        _91 {}
+        // 应用汇
+        _yingyonghui {}
+        // 豌豆荚
+        _wandoujia { }
+        // 百度手机助手
+        _baidu { }
+        // 安智市场
+        _anzhi { }
+        // 机锋
+        _jifeng { }
+        // 魅族市场
+        _meizu { }
+        // 小米市场
+        _xiaomi { }
+        // google商店
+        _googleplay { }
+        // 安卓市场
+        _anzhuoshichang { }
+        // 华为应用商店
+        _huawei { }
+        // 淘宝手机助手
+        _taobao { }
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="不展示通知"
+        />
+    <Button
+        android:id="@+id/bt_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="声音震动"
+        />
+    <Button
+        android:id="@+id/bt_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="震动"
+        />
+    <Button
+        android:id="@+id/bt_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="声音"
+        />
+    <Button
+        android:id="@+id/bt_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无声音无震动"
+        />
+
+</LinearLayout>

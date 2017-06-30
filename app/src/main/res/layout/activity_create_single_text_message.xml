@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="对方username"
+        />
+    
+    <EditText
+        android:hint="单聊跨应用appkey,不输入则默认本应用"
+        android:id="@+id/et_appkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/et_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="准备发送的文本"
+        />
+
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送(快捷方式创建)"
+        />
+    <EditText
+        android:hint="自定义名字,配合标准步骤使用"
+        android:id="@+id/et_custom_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="设置ExtraKey,配合标准步骤使用"
+        android:id="@+id/et_extra_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:hint="设置ExtraValue,配合标准步骤使用"
+        android:id="@+id/et_extra_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/bt_send_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送(标准步骤创建)"
+        />
+    <TextView
+        android:id="@+id/tv_show_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
